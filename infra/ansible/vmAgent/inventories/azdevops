@@ -1,0 +1,2 @@
+[azdevops]
+dwp-azdevops ansible_ssh_host=52.157.174.188 ansible_ssh_user=ansible

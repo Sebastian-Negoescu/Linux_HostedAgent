@@ -1,0 +1,18 @@
+---
+
+- hosts: azdevops
+  roles:
+    - role: "prereq_pckgs_linux"
+      tags: "Install Linux prerequisites packages"
+    - role: "install_git"
+      tags: ["Installing Git"]
+    - role: "install_dependencies"
+      tags: ["Install MS Dependencies"]
+    - role: "install_node"
+      tags: ["Install NodeJS and NPM"]
+    - role: "install_dotnet"
+      tags: ["Install .NET Core 2.2 runtime and .NET Core SDK 3.0"]
+    - role: "install_agent"
+      tags: ["Install Azure DevOps Linux Agent"]
+
+...

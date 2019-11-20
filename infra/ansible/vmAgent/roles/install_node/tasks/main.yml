@@ -1,0 +1,16 @@
+---
+
+- name: "Install NodeJS"
+  apt:
+    name: "nodejs"
+    state: "latest"
+    update_cache: yes
+  become: yes
+
+- name: "Install Node Package Manager"
+  apt:
+    name: "npm"
+    state: "latest"
+  become: yes
+
+...

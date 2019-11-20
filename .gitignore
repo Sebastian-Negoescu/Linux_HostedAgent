@@ -1,0 +1,3 @@
+infra/terraform/secrets.tfvars
+infra/terraform/.terraform
+infra/ansible/vmAgent/install.retry

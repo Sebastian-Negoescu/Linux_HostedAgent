@@ -1,0 +1,14 @@
+---
+
+- name: "Create Hello.txt"
+  file:
+    path: "/home/{{ user }}/hello.txt"
+    state: "touch"
+    mode: "0755"
+
+- name: "Hello AzDevOps"
+  copy:
+    content: "{{ helloMessage }}"
+    dest: "/home/{{ user }}/hello.txt"
+
+...

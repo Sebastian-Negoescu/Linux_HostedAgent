@@ -1,0 +1,12 @@
+---
+
+- name: "Download the Microsoft shell script"
+  get_url:
+    url: "https://raw.githubusercontent.com/microsoft/azure-pipelines-agent/master/src/Misc/layoutbin/installdependencies.sh"
+    dest: "/home/{{ user }}/installdependencies.sh"
+    mode: "0755"
+
+- name: "Install Linux agent dependencies"
+  command: "/home/{{ user }}/installdependencies.sh"
+  become: yes
+...

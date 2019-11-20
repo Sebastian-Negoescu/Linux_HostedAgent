@@ -1,0 +1,50 @@
+---
+
+- name: "Check if Microsoft Feed Package is installed"
+  command: "dpkg-query -W packages-microsoft-prod"
+  register: "debcheck"
+  failed_when: "debcheck.rc > 1"
+  changed_when: "debcheck.rc == 1"
+
+- name: "Download Microsoft Feed Package"
+  get_url:
+    url: "https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb"
+    dest: "/home/ansible/packages-microsoft-prod.deb"
+  when: "debcheck.rc == 1"
+
+- name: "Install Microsoft Feed Package"
+  apt:
+    deb: "/home/ansible/packages-microsoft-prod.deb"
+  become: yes
+  when: "debcheck.rc == 1"
+
+- name: "Enable Univers Repository"
+  apt_repository:
+    repo: "{{ item }}"
+    state: "present"
+  loop:
+    - "deb http://archive.ubuntu.com/ubuntu/ bionic universe"
+    - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
+    - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
+  become: yes
+
+- name: "Install APT-Transport-HTTPS"
+  apt:
+    name: "apt-transport-https"
+    state: "latest"
+  become: yes
+
+- name: "Install .NET Core"
+  apt:
+    name: "aspnetcore-runtime-2.2"
+    state: "latest"
+  become: yes
+
+- name: "Install .NET SDK 3.0"
+  apt:
+    name: "dotnet-sdk-3.0"
+    state: latest
+    update_cache: yes
+  become: yes
+
+...

@@ -1,0 +1,136 @@
+---
+##########################################################################
+### THE COMMENTED OUT STEPS ARE NO LONGER REQUIRED ON UBUNTU 18.04-LTS ###
+##########################################################################
+
+- name: "Install Bash"
+  apt:
+    name: "bash"
+    state: "latest"
+  become: yes
+
+- name: "Install cUrl"
+  apt:
+    name: "curl"
+    state: "latest"
+  become: yes
+#- name: "Install Cairo"
+#  apt:
+#    name: "cairo"
+#    state: "latest"
+#    update_cache: yes
+#  become: yes
+
+#- name: "Install Cups-Libs"
+#  apt:
+#    name: "cups-libs"
+#    state: "latest"
+#  become: yes
+
+- name: "Install expat"
+  apt:
+    name: "expat"
+    state: "latest"
+  become: yes
+
+- name: "Install FontConfig"
+  apt:
+    name: "fontconfig"
+    state: "latest"
+  become: yes
+
+#- name: "Install KeyUtils-Libs"
+#  apt:
+#    name: "keyutils-libs"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install Krb5-Libs"
+#  apt:
+#    name: "krb5-libs"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install LibPNG"
+#  apt:
+#    name: "libpng"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install LibSM"
+#  apt:
+#    name: "libSM"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install LibX11"
+#  apt:
+#    name: "libX11"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install LibXau"
+#  apt:
+#    name: "libXau"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install LibXdmcp"
+#  apt:
+#    name: "libXdmcp"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install LibXext"
+#  apt:
+#    name: "libXext"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install LibXinerama"
+#  apt:
+#    name: "libXinerama"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install LibXrender"
+#  apt:
+#    name: "libXrender"
+#    state: "latest"
+#  become: yes
+
+#- name: "Install Mesa-LibGL"
+#  apt:
+#    name: "mesa-libGL"
+#    state: "latest"
+#  become: yes
+
+- name: "Install NTP"
+  apt:
+    name: "ntp"
+    state: "latest"
+  become: yes
+
+- name: "Install OpenSSL"
+  apt:
+    name: "openssl"
+    state: "latest"
+  become: yes
+
+#- name: "Install PAM"
+#  apt:
+#    name: "pam"
+#    state: "latest"
+#  become: yes
+
+- name: "Install SysStat"
+  apt:
+    name: "sysstat"
+    state: "latest"
+  become: yes
+
+- name: "Install ZIP"
+  apt:
+    name: "zip"
+    state: "latest"
+  become: yes

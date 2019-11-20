@@ -1,0 +1,9 @@
+---
+
+- hosts: azdevops
+  roles:
+    - role: check_connection
+      tags: ["Check Ansible connection"]
+  #become: yes
+
+...
