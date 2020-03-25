@@ -14,5 +14,7 @@
       tags: ["Install .NET Core 2.2 runtime and .NET Core SDK 3.0"]
     - role: "install_agent"
       tags: ["Install Azure DevOps Linux Agent"]
+    - role: "install_pwsh"
+      tags: ["Install Microsoft PowerShell"]
 
 ...
