@@ -1,6 +1,7 @@
 ---
 
-- hosts: azdevops
+- hosts: localhost
+  connection: local
   roles:
     - role: "prereq_pckgs_linux"
       tags: "Install Linux prerequisites packages"
