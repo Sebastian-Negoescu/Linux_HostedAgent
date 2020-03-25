@@ -2,4 +2,4 @@ serverName: "Azure DevOps"
 user: ansible
 helloMessage: "Hello, {{ serverName }}!"
 agentDir: "/home/{{ user }}/myAgent"
-orgUrl: "https://dev.azure.com/seb-nego"
+orgUrl: "https://dev.azure.com/sebinegovw"
