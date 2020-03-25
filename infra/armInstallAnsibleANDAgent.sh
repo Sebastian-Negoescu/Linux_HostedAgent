@@ -6,5 +6,6 @@ sudo pip install ansible
 cd /home/ansible
 ansURI="https://github.com/Sebastian-Negoescu/Linux_HostedAgent.git"
 git clone $ansURI
+sudo chown -R ansible:ansible ./Linux_HostedAgent/infra/ansible/vmAgent
 cd Linux_HostedAgent/infra/ansible/vmAgent
-ansible-playbook install.yml -i inventories/azdevops -vvv
+ansible-playbook install.yml -vvv
