@@ -1,2 +1,2 @@
 [azdevops]
-azdevops-linux-agent ansible_ssh_host=52.137.3.163 ansible_ssh_user=ansible
+azdevops-linux-agent ansible_ssh_host=<lemme_kno_the_ip> ansible_ssh_user=ansible
