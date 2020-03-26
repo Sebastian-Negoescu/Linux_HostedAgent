@@ -26,11 +26,11 @@
 
 - name: "Run the Agent's shell configuration script"
   command: "{{ agentDir }}/config.sh --unattended --url {{ orgUrl }} --auth pat --token {{ azToken }} --pool Default --agent myAgent --acceptTeeEula"
-  become_user: {{ user }}
+  become_user: "{{ user }}"
 
 - name: "Configure the Agent to run as a SystemD Service"
   command: "sudo ./svc.sh install"
-  become_user: {{ user }}
+  become_user: "{{ user }}"
   args:
     chdir: "{{ agentDir }}"
   
