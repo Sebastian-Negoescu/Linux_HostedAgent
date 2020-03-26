@@ -9,4 +9,4 @@ ansURI="https://github.com/Sebastian-Negoescu/Linux_HostedAgent.git"
 git clone $ansURI
 sudo chown -R ansible:ansible ./Linux_HostedAgent/infra/ansible/vmAgent
 cd Linux_HostedAgent/infra/ansible/vmAgent
-ansible-playbook install.yml --extra-vars "azToken=txmvg74uf4ja3zjovmosm2fzldtkjhribgeltjzr7ayeeazki2nq" -vvv
+ansible-playbook install.yml --extra-vars "azToken=mgzsdpexww4itdvq6y5tm6fk5gurg4x42i2anuypporv2gunz6xa" -vvv
