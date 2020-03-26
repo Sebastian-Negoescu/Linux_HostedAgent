@@ -7,6 +7,7 @@ sudo pip install ansible
 cd /home/ansible
 echo "randompwd" > .pass
 ansURI="https://github.com/Sebastian-Negoescu/Linux_HostedAgent.git"
+agenName=(hostname -s)
 git clone $ansURI
 sudo chown -R ansible:ansible ./Linux_HostedAgent
 cd Linux_HostedAgent/infra/ansible/vmAgent
