@@ -32,7 +32,7 @@
     recurse: yes
 
 - name: "Run the Agent's shell configuration script"
-  command: "{{ agentDir }}/config.sh --unattended --url {{ orgUrl }} --auth pat --token {{ azToken }} --pool Default --agent myAgent --acceptTeeEula"
+  command: "{{ agentDir }}/config.sh --unattended --url {{ orgUrl }} --auth pat --token {{ azToken }} --pool Default --agent {{ lookup('env','AGENTNAME') }} --acceptTeeEula"
   become: yes
   become_method: "su"
   become_user: "{{ user }}"
