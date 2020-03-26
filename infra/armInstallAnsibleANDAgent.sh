@@ -11,4 +11,4 @@ export AGENTNAME=$(hostname)
 git clone $ansURI
 sudo chown -R ansible:ansible ./Linux_HostedAgent
 cd Linux_HostedAgent/infra/ansible/vmAgent
-ansible-playbook install.yml --extra-vars "azToken=mgzsdpexww4itdvq6y5tm6fk5gurg4x42i2anuypporv2gunz6xa" -vvv
+ansible-playbook install.yml --extra-vars "azToken=<FILL_IN_THE_VALUE>>" -vvv
