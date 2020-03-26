@@ -5,34 +5,44 @@
     path: "/home/{{ user }}/myAgent"
     state: "directory"
     mode: "0755"
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: "Download the Linux Agent"
   get_url:
     url: "https://vstsagentpackage.azureedge.net/agent/2.160.0/vsts-agent-linux-x64-2.160.0.tar.gz"
     dest: "/home/{{ user }}/myAgent/vsts-agent-linux-x64-2.160.0.tar.gz"
     mode: "0755"
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: "Unarchive the TAR GunZip Agent file"
   unarchive:
     remote_src: yes
     src: "/home/{{ user }}/myAgent/vsts-agent-linux-x64-2.160.0.tar.gz"
     dest: "/home/{{ user }}/myAgent"
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: "Run the Agent's shell configuration script"
   command: "{{ agentDir }}/config.sh --unattended --url {{ orgUrl }} --auth pat --token {{ azToken }} --pool Default --agent myAgent --acceptTeeEula"
+  become_user: {{ user }}
 
 - name: "Configure the Agent to run as a SystemD Service"
   command: "sudo ./svc.sh install"
+  become_user: {{ user }}
   args:
     chdir: "{{ agentDir }}"
   
 - name: "Start the Agent SystemD Service"
   command: "sudo ./svc.sh start"
+  become_user: "{{ user }}"
   args:
     chdir: "{{ agentDir }}"
 
 - name: "Verify the status of the Agent"
   command: "sudo ./svc.sh status"
+  become_user: "{{ user }}"
   args:
     chdir: "{{ agentDir }}"
 
